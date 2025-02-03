@@ -1,17 +1,17 @@
 #!/bin/bash
-if [ $# -eq 0 ]
-then
-    echo -n "No arguments supplied"
+
+if [ $# -eq 0 ]; then
+    echo "No arguments supplied"
 else
-    count=1
-    for arg in "$@"
-    do
-        if [ $count -eq $# ]
-        then
-            echo -n "$arg"
-        else
-            echo -e "$arg"
-        fi
-        count=$((count + 1))
+    for ((i=1; i<=3; i++)) do
+        if [ -n "${!i}" ]; then
+            if [ $i -eq 3 ] && [ -n "${!i}" ]; then
+                printf "%s" "${!i}"
+            elif [ $i -eq 1 ]; then
+                printf "%s\n" "${!i}"
+            else
+                printf "%s\n" "${!i}"
+            fi
+        fi 
     done
 fi
