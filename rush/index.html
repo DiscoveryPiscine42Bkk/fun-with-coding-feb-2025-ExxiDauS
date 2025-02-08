@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rush</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3E3232',
+                        secondary: '#503C3C',
+                        accent: '#7E6363',
+                        light: '#A87C7C',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scrollbar::-webkit-scrollbar-track {
+            background: #503C3C;
+            border-radius: 4px;
+        }
+
+        .scrollbar::-webkit-scrollbar-thumb {
+            background: #7E6363;
+            border-radius: 4px;
+        }
+
+        .scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #A87C7C;
+        }
+    </style>
+</head>
+
+<body class="bg-primary">
+
+    <!-- Navigation -->
+    <nav class="bg-secondary fixed w-full top-0 z-50">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Brand -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-white text-xl font-bold">Our CV</a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#profile" class="text-white hover:text-light transition-colors">Profile</a>
+                    <a href="#experience" class="text-white hover:text-light transition-colors">Experience</a>
+                    <a href="#skills" class="text-white hover:text-light transition-colors">Skills</a>
+                    <a href="#contact" class="text-white hover:text-light transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-light">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#profile" class="text-white hover:text-light transition-colors">Profile</a>
+                    <a href="#about" class="text-white hover:text-light transition-colors">About</a>
+                    <a href="#skills" class="text-white hover:text-light transition-colors">Skills</a>
+                    <a href="#contact" class="text-white hover:text-light transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section id="profile" class="pt-24 pb-12">
+        <div class="max-w-screen-xl mx-auto px-6 sm:px-8 md:px-12">
+            <!-- First Person - Image Left -->
+            <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-8 mb-12 sm:mb-16 md:mb-20">
+                <!-- Image Container -->
+                <div class="w-full md:w-1/2">
+                    <div
+                        class="aspect-square max-w-[260px] sm:max-w-[320px] mx-auto bg-secondary rounded-full overflow-hidden">
+                        <img src="/rush/img/Kawin_Profile.jpg" alt="First Person" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+
+                <!-- Content Container -->
+                <div class="w-full md:w-1/2 text-white text-center md:text-left">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">Kawin Isaramala</h2>
+                    <h3 class="text-lg sm:text-xl text-light mb-4">Web Developer</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">
+                        Passionate web developer with expertise in front-end and back-end technologies.
+                        Specializing in creating responsive, user-friendly web applications.
+                    </p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4">
+                        <button class="bg-accent hover:bg-light px-5 sm:px-6 py-2 rounded transition-colors">
+                            Portfolio
+                        </button>
+                        <button
+                            class="border border-accent hover:border-light px-5 sm:px-6 py-2 rounded transition-colors">
+                            Resume
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Person - Image Right -->
+            <div class="flex flex-col-reverse md:flex-row items-center gap-6 sm:gap-8">
+                <!-- Content Container -->
+                <div class="w-full md:w-1/2 text-white text-center md:text-left">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">Kittipit Pinthawornrak</h2>
+                    <h3 class="text-lg sm:text-xl text-light mb-4">Web Developer</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">
+                        Full-stack web developer with a strong foundation in modern web technologies.
+                        Experienced in building scalable web applications and implementing responsive designs.
+                    </p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4">
+                        <button class="bg-accent hover:bg-light px-5 sm:px-6 py-2 rounded transition-colors">
+                            Portfolio
+                        </button>
+                        <button
+                            class="border border-accent hover:border-light px-5 sm:px-6 py-2 rounded transition-colors">
+                            Resume
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Image Container -->
+                <div class="w-full md:w-1/2">
+                    <div
+                        class="aspect-square max-w-[260px] sm:max-w-[320px] mx-auto bg-secondary rounded-full overflow-hidden">
+                        <img src="/rush/img/Champ-Profile.jpg" alt="Second Person" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="py-16 sm:py-20 bg-secondary">
+        <div class="max-w-screen-xl mx-auto px-6 sm:px-8 md:px-12">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-10 sm:mb-12 text-center">
+                Professional Experience
+            </h2>
+
+            <!-- First Person Experience -->
+            <div class="mb-12 sm:mb-16">
+                <h3 class="text-xl sm:text-2xl font-bold text-light mb-4 sm:mb-6 text-center sm:text-left">
+                    Kawin Isaramala
+                </h3>
+                <div class="space-y-6">
+                    <!-- Experience Item -->
+                    <div class="bg-primary p-5 sm:p-6 rounded-lg">
+                        <div class="flex flex-wrap justify-between items-start gap-3 sm:gap-0 mb-4">
+                            <div>
+                                <h4 class="text-lg sm:text-xl font-bold text-white">Senior Web Developer</h4>
+                                <p class="text-light text-sm sm:text-base">Company Name</p>
+                            </div>
+                            <p class="text-light text-sm sm:text-base">2021 - Present</p>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm sm:text-base leading-relaxed">
+                            <li>Led development of responsive web applications using modern frameworks</li>
+                            <li>Implemented CI/CD pipelines improving deployment efficiency by 40%</li>
+                            <li>Mentored junior developers and conducted code reviews</li>
+                        </ul>
+                    </div>
+
+                    <!-- Another Experience Item -->
+                    <div class="bg-primary p-5 sm:p-6 rounded-lg">
+                        <div class="flex flex-wrap justify-between items-start gap-3 sm:gap-0 mb-4">
+                            <div>
+                                <h4 class="text-lg sm:text-xl font-bold text-white">Web Developer</h4>
+                                <p class="text-light text-sm sm:text-base">Previous Company</p>
+                            </div>
+                            <p class="text-light text-sm sm:text-base">2019 - 2021</p>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm sm:text-base leading-relaxed">
+                            <li>Developed and maintained multiple client websites</li>
+                            <li>Optimized website performance increasing load speed by 60%</li>
+                            <li>Collaborated with design team to implement UI/UX improvements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Person Experience -->
+            <div>
+                <h3 class="text-xl sm:text-2xl font-bold text-light mb-4 sm:mb-6 text-center sm:text-left">
+                    Kittipit Pinthawornrak
+                </h3>
+                <div class="space-y-6">
+                    <!-- Experience Item -->
+                    <div class="bg-primary p-5 sm:p-6 rounded-lg">
+                        <div class="flex flex-wrap justify-between items-start gap-3 sm:gap-0 mb-4">
+                            <div>
+                                <h4 class="text-lg sm:text-xl font-bold text-white">Full Stack Developer</h4>
+                                <p class="text-light text-sm sm:text-base">Company Name</p>
+                            </div>
+                            <p class="text-light text-sm sm:text-base">2020 - Present</p>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm sm:text-base leading-relaxed">
+                            <li>Architected and developed scalable web applications</li>
+                            <li>Implemented microservices architecture reducing system complexity</li>
+                            <li>Led team of 5 developers in major project deliveries</li>
+                        </ul>
+                    </div>
+
+                    <!-- Another Experience Item -->
+                    <div class="bg-primary p-5 sm:p-6 rounded-lg">
+                        <div class="flex flex-wrap justify-between items-start gap-3 sm:gap-0 mb-4">
+                            <div>
+                                <h4 class="text-lg sm:text-xl font-bold text-white">Junior Developer</h4>
+                                <p class="text-light text-sm sm:text-base">Previous Company</p>
+                            </div>
+                            <p class="text-light text-sm sm:text-base">2018 - 2020</p>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm sm:text-base leading-relaxed">
+                            <li>Developed frontend features using React and Vue.js</li>
+                            <li>Implemented responsive designs and improved mobile UX</li>
+                            <li>Participated in agile development processes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 sm:py-20 bg-primary">
+        <div class="max-w-screen-xl mx-auto px-6 sm:px-8 md:px-12">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-10 sm:mb-12 text-center">
+                Skills
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- First Person Skills -->
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-light mb-4 sm:mb-6 text-center sm:text-left">
+                        Kawin Isaramala
+                    </h3>
+                    <div class="h-auto sm:h-[500px] overflow-y-auto pr-2 sm:pr-4 scrollbar space-y-4">
+                        <!-- HTML Skill -->
+                        <div class="bg-secondary p-5 sm:p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 mr-3 bg-light rounded"></div>
+                                <span class="text-white text-sm sm:text-lg">HTML</span>
+                            </div>
+                            <div class="w-full bg-accent rounded-full h-2 mb-2">
+                                <div class="bg-light rounded-full h-2" style="width: 95%"></div>
+                            </div>
+                            <span class="text-light text-xs sm:text-sm">95%</span>
+                        </div>
+
+                        <!-- CSS Skill -->
+                        <div class="bg-secondary p-5 sm:p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 mr-3 bg-light rounded"></div>
+                                <span class="text-white text-sm sm:text-lg">CSS</span>
+                            </div>
+                            <div class="w-full bg-accent rounded-full h-2 mb-2">
+                                <div class="bg-light rounded-full h-2" style="width: 90%"></div>
+                            </div>
+                            <span class="text-light text-xs sm:text-sm">90%</span>
+                        </div>
+
+                        <!-- JavaScript Skill -->
+                        <div class="bg-secondary p-5 sm:p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 mr-3 bg-light rounded"></div>
+                                <span class="text-white text-sm sm:text-lg">JavaScript</span>
+                            </div>
+                            <div class="w-full bg-accent rounded-full h-2 mb-2">
+                                <div class="bg-light rounded-full h-2" style="width: 85%"></div>
+                            </div>
+                            <span class="text-light text-xs sm:text-sm">85%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Person Skills -->
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-light mb-4 sm:mb-6 text-center sm:text-left">
+                        Kittipit Pinthawornrak
+                    </h3>
+                    <div class="h-auto sm:h-[500px] overflow-y-auto pr-2 sm:pr-4 scrollbar space-y-4">
+                        <!-- JavaScript Skill -->
+                        <div class="bg-secondary p-5 sm:p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 mr-3 bg-light rounded"></div>
+                                <span class="text-white text-sm sm:text-lg">JavaScript</span>
+                            </div>
+                            <div class="w-full bg-accent rounded-full h-2 mb-2">
+                                <div class="bg-light rounded-full h-2" style="width: 90%"></div>
+                            </div>
+                            <span class="text-light text-xs sm:text-sm">90%</span>
+                        </div>
+
+                        <!-- Django Skill -->
+                        <div class="bg-secondary p-5 sm:p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 mr-3 bg-light rounded"></div>
+                                <span class="text-white text-sm sm:text-lg">Django</span>
+                            </div>
+                            <div class="w-full bg-accent rounded-full h-2 mb-2">
+                                <div class="bg-light rounded-full h-2" style="width: 85%"></div>
+                            </div>
+                            <span class="text-light text-xs sm:text-sm">85%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="contact" class="py-20 bg-secondary">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Contact Us</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- First Person Contact -->
+                <div class="bg-primary rounded-lg p-8">
+                    <h3 class="text-2xl font-bold text-light mb-6">Kawin Isaramala</h3>
+
+                    <!-- Contact Info -->
+                    <div class="space-y-6">
+                        <!-- Email -->
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-300 text-sm">Email</p>
+                                <a href="mailto:66070009@kmitl.ac.th"
+                                    class="text-white hover:text-light">66070009@kmitl.ac.th</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-300 text-sm">Phone</p>
+                                <a href="tel:+1234567890" class="text-white hover:text-light">+1 (234) 567-890</a>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-300 text-sm">Location</p>
+                                <p class="text-white">Bangkok, Thailand</p>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="flex items-center mt-8 space-x-4">
+                            <!-- GitHub -->
+                            <a href="https://github.com/KwnxpN"
+                                class="w-10 h-10 bg-accent hover:bg-light rounded-full flex items-center justify-center transition-colors">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Person Contact -->
+                <div class="bg-primary rounded-lg p-8">
+                    <h3 class="text-2xl font-bold text-light mb-6">Kittipit Pinthawornrak</h3>
+
+                    <!-- Contact Info -->
+                    <div class="space-y-6">
+                        <!-- Email -->
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-300 text-sm">Email</p>
+                                <a href="mailto:66070017@kmitl.ac.th"
+                                    class="text-white hover:text-light">66070017@kmitl.ac.th</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-300 text-sm">Phone</p>
+                                <a href="tel:+1234567890" class="text-white hover:text-light">+1 (234) 567-890</a>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-300 text-sm">Location</p>
+                                <p class="text-white">Bangkok, Thailand</p>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="flex items-center mt-8 space-x-4">
+                            <!-- GitHub -->
+                            <a href="https://github.com/ExxiDauS"
+                                class="w-10 h-10 bg-accent hover:bg-light rounded-full flex items-center justify-center transition-colors">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <section>
+
+
+                <!-- Simple script for mobile menu toggle -->
+                <script>
+                    const mobileMenuButton = document.getElementById('mobile-menu-button');
+                    const mobileMenu = document.getElementById('mobile-menu');
+
+                    mobileMenuButton.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                    });
+
+                    // Close mobile menu when clicking menu items
+                    const mobileMenuItems = mobileMenu.getElementsByTagName('a');
+                    for (let item of mobileMenuItems) {
+                        item.addEventListener('click', () => {
+                            mobileMenu.classList.add('hidden');
+                        });
+                    }
+                </script>
+</body>
+
+</html>

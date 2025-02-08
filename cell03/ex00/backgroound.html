@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.0</title>
+    <link rel="stylesheet" href="backgroound.css">
+</head>
+<body>
+    <hr>
+    <div class="background" id="background">
+        <button onclick="changeColor()">Click me</button>
+    </div>
+
+    <script>
+        function changeColor() {
+            var bg = document.getElementById("background");
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            bg.style.backgroundColor = `rgb(${r},${g},${b})`;
+        }
+    </script>
+</body>
+</html>
